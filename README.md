@@ -19,6 +19,7 @@ has_many :comments, dependent: :destroy
 | name             | string     | null: false |
 | score            | integer    | null: false |
 | text             | string     | null: false |
+| genre_id         | string     | null: false |
 | time_required_id | string     | null: false |
 | situation_id     | string     | null: false |
 | direction_id     | string     | null: false |
