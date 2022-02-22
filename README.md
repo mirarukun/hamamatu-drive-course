@@ -9,7 +9,7 @@
 | encrypted_password | string | null: false |
 
 ### Association
-has_many :spots, dependent: :destroy
+has_many :spots, dependent: :destroy  
 has_many :comments, dependent: :destroy
 
 ## spots テーブル
@@ -25,8 +25,8 @@ has_many :comments, dependent: :destroy
 | user             | references | null: false, foreign_key:true |
 
 ### Association
-belongs_to :user
-has_many :comments, dependent: :destroy
+belongs_to :user  
+has_many :comments, dependent: :destroy  
 has_one_attached :image
 
 ## comments テーブル
@@ -38,6 +38,6 @@ has_one_attached :image
 | user    | references | null: false, foreign_key: true |
 | spot    | references | null: false, foreign_key: true |
 
-### Association
-belongs_to :user
+### Association  
+belongs_to :user  
 belongs_to :spot
