@@ -59,11 +59,11 @@ has_many :comments, dependent: :destroy
 | ---------------- | -----------| ----------- |
 | name             | string     | null: false |
 | score            | integer    | null: false |
-| text             | string     | null: false |
-| genre_id         | string     | null: false |
-| time_required_id | string     | null: false |
-| situation_id     | string     | null: false |
-| direction_id     | string     | null: false |
+| text             | text       | null: false |
+| genre_id         | integer    | null: false |
+| time_required_id | integer    | null: false |
+| situation_id     | integer    | null: false |
+| direction_id     | integer    | null: false |
 | user             | references | null: false, foreign_key:true |
 
 ### Association
