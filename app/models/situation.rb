@@ -6,4 +6,8 @@ class Situation < ActiveHash::Base
     { id: 3, name: '夜' },
     { id: 4, name: 'どの時間帯でも可' }
   ]
+
+  include ActiveHash::Associations
+  has_many :spots
+  
   end

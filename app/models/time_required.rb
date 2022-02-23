@@ -6,4 +6,8 @@ class TimeRequired < ActiveHash::Base
     { id: 3, name: '60〜30分程度' },
     { id: 4, name: '30分以下' }
   ]
+
+  include ActiveHash::Associations
+  has_many :spots
+  
   end

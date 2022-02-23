@@ -6,4 +6,8 @@ class Direction < ActiveHash::Base
     { id: 3, name: '浜松より西' },
     { id: 4, name: '浜松にある、もしくは南' }
   ]
+
+  include ActiveHash::Associations
+  has_many :spots
+  
   end
