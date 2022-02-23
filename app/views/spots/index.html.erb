@@ -1,1 +1,13 @@
 <h1>浜松のドライブスポット一覧</h1>
+
+<% if user_signed_in? %>
+<div class="greeting"> 
+<%= "#{current_user.nickname}さん、" %>
+今日を最高のドライブデーにしよう！！
+</div> 
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<%#<%= link_to "スポットを投稿する" %>
+<% else %>
+<%= link_to "新規登録",new_user_registration_path%>
+<%= link_to "ログイン",new_user_session_path%>
+<% end %>
