@@ -10,8 +10,8 @@ https://hamamatu-drive-course.herokuapp.com/
 # テスト用アカウント
 ・ Basic認証ID：miura  
 ・ Basic認証パスワード：soutei9618  
-・ メールアドレス：  
-・ パスワード：  
+・ メールアドレス：aaa@aaa
+・ パスワード：soutei9618
 
 # 利用方法
 ## スポット投稿
