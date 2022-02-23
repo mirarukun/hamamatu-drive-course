@@ -30,6 +30,7 @@ https://docs.google.com/spreadsheets/d/1fSJ0HxWTEG0yh2hSeAoqcx3TAq58uTb3pIRLDSqa
 # 実装予定の機能
 
 # データベース設計
+https://gyazo.com/168a788ffb412ed432a0a54d924e43da
 
 # 画面遷移図
 
