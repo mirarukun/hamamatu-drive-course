@@ -1,0 +1,13 @@
+
+  <h1 class="spot-title">
+  スポットを登録しよう！！
+  </h1>
+  <%= form_with model: @spot, url:spots_path ,method: :post, local: true do |f| %>
+
+
+    <div class="btn-contents">
+      <%= f.submit "スポットを登録する" ,class:"spot-register-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  <% end %>
+</div>
