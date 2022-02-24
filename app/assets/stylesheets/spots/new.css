@@ -1,5 +1,9 @@
 .spot-title{
   text-align: center;
+  padding: 0.5em;
+  color: #010101;
+  background: #eaf3ff;
+  border-bottom: solid 3px #516ab6;
 }
 
 .data{
