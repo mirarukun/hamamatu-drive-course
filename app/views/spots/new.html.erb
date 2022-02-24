@@ -15,7 +15,7 @@
     <div class="new-spots">
       スポット名(入力必須)
     </div>
-    <%= f.text_area :name, class:"spots-text", id:"spot-name", placeholder:"スポット名（必須 20文字まで)",maxlength:"20" %>
+    <%= f.text_area :name, class:"spots-text", id:"spot-name", placeholder:"スポット名（20文字まで)",maxlength:"20" %>
 
     <div class="spots-score">
       スポットの点数を10点満点で入力してください(入力必須)
@@ -25,7 +25,7 @@
     <div class="spots-explain">
       スポットの説明(入力必須)
     </div>
-    <%= f.text_area :text, class:"spots-text", id:"spot-info", placeholder:"スポットの説明（必須 1000文字まで)（おすすめポイントや注意点など記入してください）" ,rows:"5" ,cols:"40" ,maxlength:"1000" %>
+    <%= f.text_area :text, class:"spots-text", id:"spot-info", placeholder:"スポットの説明（1000文字まで)（おすすめポイントや注意点など記入してください）" ,rows:"5" ,cols:"40" ,maxlength:"1000" %>
 
     <div class="spots-hash">
         スポットのジャンルを下記から選択して下さい。(入力必須)
