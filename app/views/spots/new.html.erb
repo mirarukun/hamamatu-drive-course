@@ -3,6 +3,7 @@
   スポットを登録しよう！！
   </h1>
   <%= form_with model: @spot, url:spots_path ,method: :post, local: true do |f| %>
+   <%= render 'shared/error_messages', model: f.object %>
 
     <div class="img-upload">
         スポット画像（投稿すると詳細画面で見ることが出来ます！！）
