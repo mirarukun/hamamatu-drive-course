@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.data{
+  text-align: center;
+}
+
+.fail-text{
+  font-size: 12px;
+}
+
 .btn-contents {
   width: 100%;
   text-align: center;
