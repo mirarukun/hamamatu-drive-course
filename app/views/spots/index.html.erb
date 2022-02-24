@@ -13,3 +13,12 @@
 <%= link_to "新規登録",new_user_registration_path ,class: 'btn btn-primary btn-lg'%>
 <%= link_to "ログイン",new_user_session_path ,class: 'btn btn-primary btn-lg'%>
 <% end %>
+
+
+
+<div class = "spot-content">
+  <% @spots.each do |spot| %>
+    <%= spot.name %>
+    <%= spot.score %>点
+  <% end %>
+</div>
