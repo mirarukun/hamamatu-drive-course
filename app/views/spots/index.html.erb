@@ -19,43 +19,76 @@
 </div>
 
 <div class = "spot-content">
-  <% @spots.each do |spot| %>
-    <div class="p-3 mb-2 bg-success text-white">食事</div>
-    <% if spot.genre_id == 1 %>
-      <%= spot.name %>
-      <%= spot.score %>点
-    <div class="p-3 mb-2 bg-secondary text-white">ショッピング</div>
-    <% elsif spot.genre_id == 2 %>
-      <%= spot.name %>
-      <%= spot.score %>点
-    <div class="p-3 mb-2 bg-danger text-white">夜景</div>
-    <% elsif spot.genre_id == 3 %>
-      <%= spot.name %>
-      <%= spot.score %>点
-    <div class="p-3 mb-2 bg-warning text-dark">公園</div>
-    <% elsif spot.genre_id == 4 %>
-      <%= spot.name %>
-      <%= spot.score %>点
-    <div class="p-3 mb-2 bg-primary text-white">海</div>
-    <% elsif spot.genre_id == 5 %>
-      <%= spot.name %>
-      <%= spot.score %>点
-    <div class="p-3 mb-2 bg-info text-white">山</div>
-    <% elsif spot.genre_id == 6 %>
-      <%= spot.name %>
-      <%= spot.score %>点
-    <div class="p-3 mb-2 bg-light text-dark">神社、寺院関係</div>
-    <% elsif spot.genre_id == 7 %>
-      <%= spot.name %>
-      <%= spot.score %>点
-    <div class="p-3 mb-2 bg-dark text-white">城</div>
-    <% elsif spot.genre_id == 8 %>
-      <%= spot.name %>
-      <%= spot.score %>点
-    <div class="p-3 mb-2 bg-primary text-white">その他</div>
-    <% else %>
-      <%= spot.name %>
-      <%= spot.score %>点
+  <div class="p-3 mb-2 bg-success text-white">食事</div>
+    <% @spots.each do |spot| %>
+      <% if spot.genre_id == 1 %>
+        <p class="display-6">
+          ○<%= spot.name %>：<%= spot.score %>点
+        </p> 
+      <% end %>
     <% end %>
-  <% end %>
+  <div class="p-3 mb-2 bg-secondary text-white">ショッピング</div>
+    <% @spots.each do |spot| %>
+      <% if spot.genre_id == 2 %>
+        <p class="display-6">
+          ○<%= spot.name %>：<%= spot.score %>点
+        </p> 
+      <% end %>
+    <% end %>
+  <div class="p-3 mb-2 bg-danger text-white">夜景</div>
+    <% @spots.each do |spot| %>
+      <% if spot.genre_id == 3 %>
+        <p class="display-6">
+          ○<%= spot.name %>：<%= spot.score %>点
+        </p> 
+      <% end %>
+    <% end %>
+  <div class="p-3 mb-2 bg-warning text-dark">公園</div>
+    <% @spots.each do |spot| %>
+      <% if spot.genre_id == 4 %>
+        <p class="display-6">
+          ○<%= spot.name %>：<%= spot.score %>点
+        </p> 
+      <% end %>
+    <% end %>
+  <div class="p-3 mb-2 bg-primary text-white">海</div>
+    <% @spots.each do |spot| %>
+      <% if spot.genre_id == 5 %>
+        <p class="display-6">
+          ○<%= spot.name %>：<%= spot.score %>点
+        </p> 
+      <% end %>
+    <% end %>
+  <div class="p-3 mb-2 bg-info text-white">山</div>
+    <% @spots.each do |spot| %>
+      <% if spot.genre_id == 6 %>
+        <p class="display-6">
+          ○<%= spot.name %>：<%= spot.score %>点
+        </p> 
+      <% end %>
+    <% end %>
+  <div class="p-3 mb-2 bg-light text-dark">神社、寺院関係</div>
+    <% @spots.each do |spot| %>
+      <% if spot.genre_id == 7 %>
+        <p class="display-6">
+          ○<%= spot.name %>：<%= spot.score %>点
+        </p> 
+      <% end %>
+    <% end %>
+  <div class="p-3 mb-2 bg-dark text-white">城</div>
+    <% @spots.each do |spot| %>
+      <% if spot.genre_id == 8 %>
+        <p class="display-6">
+          ○<%= spot.name %>：<%= spot.score %>点
+        </p> 
+      <% end %>
+    <% end %>
+  <div class="p-3 mb-2 bg-success text-white">その他</div>
+    <% @spots.each do |spot| %>
+      <% if spot.genre_id == 9 %>
+        <p class="display-6">
+          ○<%= spot.name %>：<%= spot.score %>点
+        </p> 
+      <% end %>
+    <% end %>
 </div>
