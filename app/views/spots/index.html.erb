@@ -7,18 +7,55 @@
 <%= "#{current_user.nickname}さん、" %>
 今日を最高のドライブデーにしよう！！
 </p> 
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: 'btn btn-primary btn-lg' %>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: 'btn btn-info btn-lg' %>
 <%= link_to "スポットを投稿する", new_spot_path, class:"btn btn-danger btn-lg" %>
 <% else %>
 <%= link_to "新規登録",new_user_registration_path ,class: 'btn btn-primary btn-lg'%>
 <%= link_to "ログイン",new_user_session_path ,class: 'btn btn-primary btn-lg'%>
 <% end %>
 
-
+<div class="mt-3">
+<p class="display-6 bg-primary text-white text-left">スポット紹介</p>
+</div>
 
 <div class = "spot-content">
   <% @spots.each do |spot| %>
-    <%= spot.name %>
-    <%= spot.score %>点
+    <div class="p-3 mb-2 bg-success text-white">食事</div>
+    <% if spot.genre_id == 1 %>
+      <%= spot.name %>
+      <%= spot.score %>点
+    <div class="p-3 mb-2 bg-secondary text-white">ショッピング</div>
+    <% elsif spot.genre_id == 2 %>
+      <%= spot.name %>
+      <%= spot.score %>点
+    <div class="p-3 mb-2 bg-danger text-white">夜景</div>
+    <% elsif spot.genre_id == 3 %>
+      <%= spot.name %>
+      <%= spot.score %>点
+    <div class="p-3 mb-2 bg-warning text-dark">公園</div>
+    <% elsif spot.genre_id == 4 %>
+      <%= spot.name %>
+      <%= spot.score %>点
+    <div class="p-3 mb-2 bg-primary text-white">海</div>
+    <% elsif spot.genre_id == 5 %>
+      <%= spot.name %>
+      <%= spot.score %>点
+    <div class="p-3 mb-2 bg-info text-white">山</div>
+    <% elsif spot.genre_id == 6 %>
+      <%= spot.name %>
+      <%= spot.score %>点
+    <div class="p-3 mb-2 bg-light text-dark">神社、寺院関係</div>
+    <% elsif spot.genre_id == 7 %>
+      <%= spot.name %>
+      <%= spot.score %>点
+    <div class="p-3 mb-2 bg-dark text-white">城</div>
+    <% elsif spot.genre_id == 8 %>
+      <%= spot.name %>
+      <%= spot.score %>点
+    <div class="p-3 mb-2 bg-primary text-white">その他</div>
+    <% else %>
+      <%= spot.name %>
+      <%= spot.score %>点
+    <% end %>
   <% end %>
 </div>
