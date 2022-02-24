@@ -1,0 +1,58 @@
+
+  <h1 class="spot-title">
+  スポットを登録しよう！！
+  </h1>
+
+<%= form_with model: @spot, url:spots_path ,method: :post, local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+  <div class="data">  
+    <div class="img-upload">
+      ①スポット画像（投稿すると詳細画面で見ることが出来ます！！）
+        <p class="fail-text">
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"spot-image" %>
+    </div>
+
+    <div class="new-spots">
+      ②スポット名(入力必須)
+    </div>
+    <%= f.text_area :name, class:"spots-text", id:"spot-name", placeholder:"スポット名（20文字まで)",maxlength:"20" %>
+
+    <div class="spots-score">
+      ③スポットの点数を10点満点で入力してください(入力必須)
+    </div>
+    <%= f.text_area :score, class:"spots-score", id:"spot-score", placeholder:"(半角数字)"%>
+
+    <div class="spots-explain">
+      ④スポットの説明(入力必須)
+    </div>
+    <%= f.text_area :text, class:"spots-text", id:"spot-info", placeholder:"スポットの説明（1000文字まで)（おすすめポイントや注意点など記入してください）" ,rows:"5" ,cols:"40" ,maxlength:"1000" %>
+
+    <div class="spots-hash">
+      ⑤スポットのジャンルを下記から選択して下さい。(入力必須)
+    </div>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"spots-ganre"}) %>
+
+    <div class="spots-hash">
+      ⑥浜松から向かって、スポットに到着するまでの所要時間を下記から選択して下さい。(入力必須)
+    </div>
+    <%= f.collection_select(:time_required_id, TimeRequired.all, :id, :name, {}, {class:"select-box", id:"spots-time"}) %>
+
+    <div class="spots-hash">
+      ⑦そのスポットは、朝、昼、夜のうちどの時間帯に行くのがおすすめですか？(入力必須)
+    </div>
+    <%= f.collection_select(:situation_id, Situation.all, :id, :name, {}, {class:"select-box", id:"spots-time"}) %>
+
+    <div class="spots-hash">
+      ⑧浜松から見てどちらの方角にあるかを記入してください。 例）豊川の場合 西、静岡の場合 東 (入力必須)
+    </div>
+    <%= f.collection_select(:direction_id, Direction.all, :id, :name, {}, {class:"select-box", id:"spots-time"}) %>
+  </div>
+
+  <div class="btn-contents">
+      <%= f.submit "スポットを登録する" ,class:"spot-register-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+
+<% end %>

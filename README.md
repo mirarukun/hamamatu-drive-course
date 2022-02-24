@@ -10,8 +10,8 @@ https://hamamatu-drive-course.herokuapp.com/
 # テスト用アカウント
 ・ Basic認証ID：miura  
 ・ Basic認証パスワード：soutei9618  
-・ メールアドレス：  
-・ パスワード：  
+・ メールアドレス：aaa@aaa
+・ パスワード：soutei9618
 
 # 利用方法
 ## スポット投稿
@@ -30,6 +30,7 @@ https://docs.google.com/spreadsheets/d/1fSJ0HxWTEG0yh2hSeAoqcx3TAq58uTb3pIRLDSqa
 # 実装予定の機能
 
 # データベース設計
+https://gyazo.com/168a788ffb412ed432a0a54d924e43da
 
 # 画面遷移図
 
@@ -58,11 +59,11 @@ has_many :comments, dependent: :destroy
 | ---------------- | -----------| ----------- |
 | name             | string     | null: false |
 | score            | integer    | null: false |
-| text             | string     | null: false |
-| genre_id         | string     | null: false |
-| time_required_id | string     | null: false |
-| situation_id     | string     | null: false |
-| direction_id     | string     | null: false |
+| text             | text       | null: false |
+| genre_id         | integer    | null: false |
+| time_required_id | integer    | null: false |
+| situation_id     | integer    | null: false |
+| direction_id     | integer    | null: false |
 | user             | references | null: false, foreign_key:true |
 
 ### Association
