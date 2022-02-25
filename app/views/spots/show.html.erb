@@ -2,4 +2,38 @@
   <div class="border border-primary rounded m-1" style="padding:5px;">
   <p class="display-3 "><%= @spot.name%>の詳細情報</p>
   </div><br>
+
+  <%= image_tag @spot.image.variant(resize: '500x500') if @spot.image.attached? %>
+
+  <p class="display-6 ">
+    <%= @spot.text%>
+  </p>
+
+  <table class="table table-info table-striped">
+    <thead>
+      <tr>
+        <th scope="col"><%= @spot.name%>の評価</th>
+        <th scope="col"><%= @spot.score%>点 /(10点満点）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">ジャンル</th>
+        <td><%= @spot.genre.name%></td>
+      </tr>
+      <tr>
+        <th scope="row">浜松から車で片道どのくらいかかる？</th>
+        <td><%= @spot.time_required.name%></td>
+      </tr>
+      <tr>
+        <th scope="row">おすすめの時間帯は？</th>
+        <td><%= @spot.situation.name%></td>
+      </tr>
+      <tr>
+        <th scope="row">浜松から見た方角は？</th>
+        <td><%= @spot.direction.name%></td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>
