@@ -41,7 +41,9 @@
     <% @spots.each do |spot| %>
       <% if spot.genre_id == 2 %>
         <p class="display-6">
-          ○<%= spot.name %>：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ○
+          <%= link_to spot.name, spot_path(spot.id) %>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -49,7 +51,9 @@
     <% @spots.each do |spot| %>
       <% if spot.genre_id == 3 %>
         <p class="display-6">
-          ○<%= spot.name %>：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ○
+          <%= link_to spot.name, spot_path(spot.id) %>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -57,7 +61,9 @@
     <% @spots.each do |spot| %>
       <% if spot.genre_id == 4 %>
         <p class="display-6">
-          ○<%= spot.name %>：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ○
+          <%= link_to spot.name, spot_path(spot.id) %>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -65,7 +71,9 @@
     <% @spots.each do |spot| %>
       <% if spot.genre_id == 5 %>
         <p class="display-6">
-          ○<%= spot.name %>：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ○
+          <%= link_to spot.name, spot_path(spot.id) %>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -73,7 +81,9 @@
     <% @spots.each do |spot| %>
       <% if spot.genre_id == 6 %>
         <p class="display-6">
-          ○<%= spot.name %>：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ○
+          <%= link_to spot.name, spot_path(spot.id) %>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -81,7 +91,9 @@
     <% @spots.each do |spot| %>
       <% if spot.genre_id == 7 %>
         <p class="display-6">
-          ○<%= spot.name %>：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ○
+          <%= link_to spot.name, spot_path(spot.id) %>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -89,7 +101,9 @@
     <% @spots.each do |spot| %>
       <% if spot.genre_id == 8 %>
         <p class="display-6">
-          ○<%= spot.name %>：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ○
+          <%= link_to spot.name, spot_path(spot.id) %>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -97,7 +111,9 @@
     <% @spots.each do |spot| %>
       <% if spot.genre_id == 9 %>
         <p class="display-6">
-          ○<%= spot.name %>：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ○
+          <%= link_to spot.name, spot_path(spot.id) %>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
         </p> 
       <% end %>
     <% end %>
