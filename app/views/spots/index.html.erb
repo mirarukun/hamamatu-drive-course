@@ -1,22 +1,30 @@
-<div class="page-header">
-<p class="display-3 bg-primary text-white">浜松のドライブスポット一覧</p>
-</div>
+<div class="m-2">
+<div class="border border-primary rounded m-1" style="padding:5px;">
+<p class="display-3 ">浜松のドライブスポット一覧</p>
+</div><br>
 
 <% if user_signed_in? %>
-<p class="display-6"> 
-<%= "#{current_user.nickname}さん、" %>
-今日を最高のドライブデーにしよう！！
-</p> 
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: 'btn btn-info btn-lg' %>
-<%= link_to "スポットを投稿する", new_spot_path, class:"btn btn-danger btn-lg" %>
+  <p class="display-6"> 
+    <%= "#{current_user.nickname}さん、" %>
+    今日を最高のドライブデーにしよう！！
+  </p> 
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: 'btn btn-info btn-lg' %>
+  <%= link_to "スポットを投稿する", new_spot_path, class:"btn btn-danger btn-lg" %>
 <% else %>
-<%= link_to "新規登録",new_user_registration_path ,class: 'btn btn-primary btn-lg'%>
-<%= link_to "ログイン",new_user_session_path ,class: 'btn btn-primary btn-lg'%>
+  <p class="display-6"> 
+    下のボタンから新規登録かログインをしよう！！
+  </p> 
+  <%= link_to "新規登録",new_user_registration_path ,class: 'btn btn-primary btn-lg'%>
+  <%= link_to "ログイン",new_user_session_path ,class: 'btn btn-primary btn-lg'%>
 <% end %>
 
 <div class="mt-3">
 <p class="display-6 bg-primary text-white text-left">スポット紹介</p>
 </div>
+
+  <p class="display-7"> 
+   (スポットの名前を押すと詳細を見ることができるよ🤗)
+  </p> 
 
 <div class = "spot-content">
   <div class="p-3 mb-2 bg-success text-white">食事</div>
@@ -91,4 +99,5 @@
         </p> 
       <% end %>
     <% end %>
+</div>
 </div>
