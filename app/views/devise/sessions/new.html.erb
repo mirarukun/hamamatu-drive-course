@@ -1,6 +1,7 @@
-<div class="contents row">
-  <div class="container">
-    <h2>ログイン</h2>
+ <div class= "mt-2 m-1">
+    <div class="border border-primary rounded m-1" style="padding:5px;">
+    <h1>ログイン</h1>
+    </div><br>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <div class="field">
         <%= f.label :email, "メールアドレス" %><br />
@@ -12,9 +13,8 @@
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
-      <div class="actions">
+      <div class= "mt-2 m-1">
         <%= f.submit "ログイン",class: 'btn btn-primary btn-lg' %>
       </div>
     <% end %>
-  </div>
 </div>
