@@ -31,7 +31,9 @@
     <% @spots.each do |spot| %>
       <% if spot.genre_id == 1 %>
         <p class="display-6">
-          ○<%= spot.name %>：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ○
+          <%= link_to spot.name, spot_path(spot.id) %>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
         </p> 
       <% end %>
     <% end %>
