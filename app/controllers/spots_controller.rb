@@ -15,7 +15,10 @@ class SpotsController < ApplicationController
       render :new
     end
   end
-
+  
+  def show
+  end
+ 
   private
 
   def spot_params
