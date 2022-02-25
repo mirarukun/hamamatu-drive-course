@@ -3,7 +3,9 @@
   <p class="display-3 "><%= @spot.name%>の詳細情報</p>
   </div><br>
 
+  <div class="d-flex justify-content-center">
   <%= image_tag @spot.image.variant(resize: '500x500') if @spot.image.attached? %>
+  </div>
 
   <p class="display-6 ">
     <%= @spot.text%>
@@ -35,5 +37,13 @@
       </tr>
     </tbody>
   </table>
-
+  <div class="d-flex justify-content-around">
+    <%= link_to "トップページへ戻る", root_path, class: 'btn btn-info btn-lg' %>
+    <% if user_signed_in? && current_user.id == @spot.user_id %>
+      <div class>
+        <%= link_to "編集", root_path, class:"btn btn-warning btn-lg" %>
+        <%= link_to "削除", root_path, class:"btn btn-danger btn-lg" %>
+      </div>
+    <% end %>
+  </div>
 </div>
