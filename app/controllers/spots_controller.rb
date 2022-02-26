@@ -34,6 +34,9 @@ class SpotsController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
 
   def spot_params
