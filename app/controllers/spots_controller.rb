@@ -20,13 +20,18 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
   end
 
-    def edit
-      @spot = Spot.find(params[:id])
-    end
+  def edit
+    @spot = Spot.find(params[:id])
+  end
 
-    def update
-      @spot = Spot.find(params[:id])
+  def update
+    @spot = Spot.find(params[:id])
+    if @spot.update(spot_params)
+      redirect_to spot_path
+    else
+      render :edit
     end
+  end
 
   private
 
