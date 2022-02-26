@@ -41,7 +41,7 @@
     <%= link_to "トップページへ戻る", root_path, class: 'btn btn-info btn-lg' %>
     <% if user_signed_in? && current_user.id == @spot.user_id %>
       <div class>
-        <%= link_to "編集", root_path, class:"btn btn-warning btn-lg" %>
+        <%= link_to "編集", edit_spot_path(@spot.id), class:"btn btn-warning btn-lg" %>
         <%= link_to "削除", root_path, class:"btn btn-danger btn-lg" %>
       </div>
     <% end %>
