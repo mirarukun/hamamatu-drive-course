@@ -20,6 +20,12 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
   end
 
+    def edit
+    end
+
+    def update
+    end
+    
   private
 
   def spot_params
