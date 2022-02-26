@@ -40,6 +40,11 @@ class SpotsController < ApplicationController
     end
   end
 
+  def search
+    @q = Spot.ransack(params[:q])
+    @spots = @q.result
+  end
+
   private
 
   def spot_params
