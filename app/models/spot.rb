@@ -14,11 +14,9 @@ class Spot < ApplicationRecord
     validates :score, inclusion: { in: 0..10 }, format: { with: /\A[0-9]+\z/ }
     validates :text
   end
-  with_options numericality: { other_than: 0, message: "can't be blank" } do
-    validates :genre_id
-    validates :time_required_id
-    validates :situation_id
-    validates :direction_id
-  end
+  validates :genre_id, numericality: { greater_than_or_equal_to:1 ,less_than_or_equal_to:9, message: "is invalid" }
+  validates :time_required_id, numericality: { greater_than_or_equal_to:1 ,less_than_or_equal_to:6, message: "is invalid" }
+  validates :situation_id, numericality: { greater_than_or_equal_to:1 ,less_than_or_equal_to:6, message: "is invalid" }
+  validates :direction_id, numericality: { greater_than_or_equal_to:1 ,less_than_or_equal_to:4, message: "is invalid" }
   validates :score, numericality: true
 end
