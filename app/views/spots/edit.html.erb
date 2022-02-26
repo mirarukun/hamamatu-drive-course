@@ -50,8 +50,8 @@
   </div>
 
   <div class="btn-contents">
-      <%= f.submit "スポットを登録する" ,class:"spot-register-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%= f.submit "スポット編集確定（編集できたらこちらを押してください！）" ,class:"spot-register-btn" %>
+      <%=link_to '編集せずに詳細ページへもどる', spot_path(@spot.id), class:"back-btn" %>
   </div>
 
 <% end %>
