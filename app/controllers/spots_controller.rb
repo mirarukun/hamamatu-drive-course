@@ -1,4 +1,8 @@
 class SpotsController < ApplicationController
+  before_action :authenticate_user!, only: [ :new, :edit]
+  before_action :assign_to_spot_instance, only: [ :show, :edit, :update]
+  before_action :move_to_root, only: [ :edit]
+
   def index
     @spots = Spot.includes(:user)
   end
@@ -17,7 +21,17 @@ class SpotsController < ApplicationController
   end
 
   def show
-    @spot = Spot.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @spot.update(spot_params)
+      redirect_to spot_path
+    else
+      render :edit
+    end
   end
 
   private
@@ -25,5 +39,15 @@ class SpotsController < ApplicationController
   def spot_params
     params.require(:spot).permit(:name, :score, :text, :genre_id, :time_required_id,
                                  :situation_id, :direction_id, :image).merge(user_id: current_user.id)
+  end
+
+  def assign_to_spot_instance
+    @spot = Spot.find(params[:id])
+  end
+
+  def move_to_root
+    if @spot.user_id != current_user.id
+      redirect_to root_path
+    end
   end
 end
