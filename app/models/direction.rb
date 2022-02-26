@@ -4,7 +4,7 @@ class Direction < ActiveHash::Base
     { id: 1, name: '浜松より北' },
     { id: 2, name: '浜松より東' },
     { id: 3, name: '浜松より西' },
-    { id: 4, name: '浜松にある、もしくは南' }
+    { id: 4, name: '浜松にある' }
   ]
 
   include ActiveHash::Associations
