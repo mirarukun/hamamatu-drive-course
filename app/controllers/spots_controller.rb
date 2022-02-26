@@ -1,7 +1,7 @@
 class SpotsController < ApplicationController
-  before_action :authenticate_user!, only: [ :new, :edit]
-  before_action :assign_to_spot_instance, only: [ :show, :edit, :update]
-  before_action :move_to_root, only: [ :edit]
+  before_action :authenticate_user!, only: [ :new, :edit, :destroy]
+  before_action :assign_to_spot_instance, only: [ :show, :edit, :update, :destroy]
+  before_action :move_to_root, only: [ :edit, :destroy]
 
   def index
     @spots = Spot.includes(:user)
@@ -31,6 +31,12 @@ class SpotsController < ApplicationController
       redirect_to spot_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @spot.destroy
+      redirect_to action: :index
     end
   end
 
