@@ -11,5 +11,4 @@ class TimeRequired < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :spots
-  
-  end
+end
