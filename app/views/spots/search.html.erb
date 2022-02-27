@@ -1,2 +1,44 @@
 <h1>条件を入れて目的地を決めよう！！</h1>
 <%= link_to "一覧ページにもとる", root_path, class:"btn btn-danger btn-lg" %>
+
+<div class='item-contents' id="detailed-search-result-wrapper">
+  <%= search_form_for @q, url: search_spots_path, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">  
+      <%= f.label :genre_id_eq, 'どんな場所に行きたい？？（ジャンル検索）' %>
+      <br>
+      <%= f.collection_select(:genre_id_eq, Genre.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+  
+    <div class="search-field">  
+      <%= f.label :time_required_id_eq, '目的地までどのくらいの時間で行きたい？？（所要時間検索）' %>
+      <br>
+      <%= f.collection_select(:time_required_id_eq, TimeRequired.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+
+    <div class="search-field">  
+      <%= f.label :situation_id_eq, 'ドライブしようと思っている時間帯は？？（シチュエーション検索）' %>
+      <br>
+      <%= f.collection_check_boxes(:situation_id_in, Situation.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+
+    <div class="search-field">  
+      <%= f.label :direction_id_eq, 'どの方角を運転したい？？運転したい道はどの方角？？（方角検索）' %>
+      <br>
+      <%= f.collection_select(:direction_id_eq, Direction.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+      <%= f.submit '検索' %>
+  <% end %>
+
+
+
+  <ul class='spot-lists' id="detailed-search-result">
+    <% @spots.each do |spot| %>
+      <li class='list'>
+        <div class="posted-content">
+          <%= spot.name%><br>
+          <%= link_to 'このスポットの詳細', spot_path(spot.id)%>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
