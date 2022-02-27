@@ -33,22 +33,22 @@
     <div class="spots-hash">
       ⑤スポットのジャンルを下記から選択して下さい。(入力必須)
     </div>
-    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"spots-ganre"}) %>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank: "--"}, {class:"select-box", id:"spots-ganre"}) %>
 
     <div class="spots-hash">
       ⑥浜松から向かって、スポットに到着するまでの所要時間を下記から選択して下さい。(入力必須)
     </div>
-    <%= f.collection_select(:time_required_id, TimeRequired.all, :id, :name, {}, {class:"select-box", id:"spots-time"}) %>
+    <%= f.collection_select(:time_required_id, TimeRequired.all, :id, :name, {include_blank: "--"}, {class:"select-box", id:"spots-time"}) %>
 
     <div class="spots-hash">
       ⑦そのスポットは、朝、昼、夜のうちどの時間帯に行くのがおすすめですか？(入力必須)
     </div>
-    <%= f.collection_select(:situation_id, Situation.all, :id, :name, {}, {class:"select-box", id:"spots-time"}) %>
+    <%= f.collection_select(:situation_id, Situation.all, :id, :name, {include_blank: "--"}, {class:"select-box", id:"spots-time"}) %>
 
     <div class="spots-hash">
       ⑧浜松から見てどちらの方角にあるかを記入してください。 例）豊川の場合 西、静岡の場合 東 (入力必須)
     </div>
-    <%= f.collection_select(:direction_id, Direction.all, :id, :name, {}, {class:"select-box", id:"spots-time"}) %>
+    <%= f.collection_select(:direction_id, Direction.all, :id, :name, {include_blank: "--"}, {class:"select-box", id:"spots-time"}) %>
   </div>
 
   <div class="btn-contents">

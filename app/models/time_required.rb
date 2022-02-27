@@ -1,6 +1,5 @@
 class TimeRequired < ActiveHash::Base
   self.data = [
-    { id: 0, name: '--' },
     { id: 1, name: '片道2時間以上かかる（遠距離）' },
     { id: 2, name: '片道90分以上~120分未満' },
     { id: 3, name: '片道60分以上~90分未満' },
