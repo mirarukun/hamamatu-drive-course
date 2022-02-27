@@ -1,37 +1,49 @@
-<h1>条件を入れて目的地を決めよう！！</h1>
-<%= link_to "一覧ページにもとる", root_path, class:"btn btn-danger btn-lg" %>
+<div class="m-3">
+  <h1 class="search-title">条件を入れて目的地を決めよう！！</h1>
 
-<div class='item-contents' id="detailed-search-result-wrapper">
+  <div class="mt-4">
+    <p>下記の質問に答えて、条件に合うスポットを見つけることが出来ます！！<br>
+    条件は一つ答えるだけでスポットを絞り込むことが出来るよ！あまり条件をつけすぎるとヒットするスポットがなくなっちゃうから注意してね！</p>
+  </div>
+
+  <%= link_to "一覧ページにもとる", root_path, class:"btn btn-danger btn-lg" %>
+
   <%= search_form_for @q, url: search_spots_path, html: {id: "detailed-search-form"} do |f| %>
-    <div class="search-field">  
+    <div class="mt-3">  
       <%= f.label :genre_id_eq, 'どんな場所に行きたい？？（ジャンル検索）' %>
       <br>
       <%= f.collection_select(:genre_id_eq, Genre.all, :id, :name, {include_blank: "---"}) %>
     </div>
   
-    <div class="search-field">  
+    <div class="mt-3">  
       <%= f.label :time_required_id_eq, '目的地までどのくらいの時間で行きたい？？（所要時間検索）' %>
       <br>
       <%= f.collection_select(:time_required_id_eq, TimeRequired.all, :id, :name, {include_blank: "---"}) %>
     </div>
 
-    <div class="search-field">  
+    <div class="mt-3">  
       <%= f.label :situation_id_eq, 'ドライブしようと思っている時間帯は？？（シチュエーション検索）' %>
       <br>
-      <%= f.collection_check_boxes(:situation_id_in, Situation.all, :id, :name, {include_blank: "---"}) %>
+      <p>チェックボックスをクリックしてください。（複数指定可能）</p>
+      <%= f.collection_check_boxes(:situation_id_in, Situation.all, :id, :name, {include_blank: "---"},{ class:"check_lb"}) %>
     </div>
 
-    <div class="search-field">  
+    <div class="mt-2">  
       <%= f.label :direction_id_eq, 'どの方角を運転したい？？運転したい道はどの方角？？（方角検索）' %>
       <br>
       <%= f.collection_select(:direction_id_eq, Direction.all, :id, :name, {include_blank: "---"}) %>
     </div>
-      <%= f.submit '検索' %>
+
+    <div class="mt-3">  
+      <%= f.submit 'スポット検索！' ,class:"btn btn-primary btn-lg"%>
+      <br>
+      上記ボタンを押すと、条件に合うスポットのみ表示されます。
+    </div>
   <% end %>
 
 
 
-  <ul class='spot-lists' id="detailed-search-result">
+  <ul class='mt-3'>
     <% @spots.each do |spot| %>
       <li class='list'>
         <div class="posted-content">
