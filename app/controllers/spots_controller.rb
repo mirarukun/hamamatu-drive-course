@@ -21,6 +21,7 @@ class SpotsController < ApplicationController
   end
 
   def show
+    @spots = Spot.includes(:user)
   end
 
   def edit
