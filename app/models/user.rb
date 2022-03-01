@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   has_many :spots, dependent: :destroy
-  # has_many :comments, dependent: :destroy コメントモデル作ったらコメントアウト外す
+  has_many :comments, dependent: :destroy 
 end
