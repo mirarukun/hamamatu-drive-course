@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def create
-    @Comment = Comment.new(spot_params)
+    @comment = Comment.new(spot_params)
     if @comment.save
       redirect_to spot_path(@comment.spot)
     else
