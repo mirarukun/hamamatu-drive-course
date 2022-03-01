@@ -48,6 +48,21 @@
           <%end%>
   </div>
 
+  <% if current_user.id != @spot.user_id %>
+    <% if user_signed_in? %>
+      このスポットに対して、あなたの評価も書いてみよう！！
+      <%= form_with(model: [@spot, @comment], local: true) do |f| %>
+        評価点（10点満点で記入）
+        <%= f.text_area :score, placeholder:"(半角数字)"%>
+        このスポットに行った感想や伝えたいことなどコメントしよう！！
+        <%= f.text_area :text, placeholder: "コメントする", rows: "2" %>
+        <%= f.submit "このスポットの評価を投稿" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+  <% end %>
+
   <div class="d-flex justify-content-around">
     <%= link_to "トップページへ戻る", root_path, class: 'btn btn-info btn-lg' %>
     <% if user_signed_in? && current_user.id == @spot.user_id %>
