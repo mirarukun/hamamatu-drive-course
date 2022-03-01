@@ -41,11 +41,9 @@
   <div class = "border border-primary border-3 rounded m-3 p-3">
     <p class="display-7 "><%= @spot.name%>と一緒に行けそうなスポット（同じ方角のスポット）</p>
           <% @spots.each do |spot| %>
-            <% if spot.direction_id == @spot.direction_id %>
-              <% if spot.id != @spot.id %>
+            <% if spot.direction_id == @spot.direction_id && spot.id != @spot.id %>
                 ・ <%= spot.name %>
                 <%= link_to 'このスポットの詳細', spot_path(spot.id)%>
-              <%end%>
             <%end%>
           <%end%>
   </div>
