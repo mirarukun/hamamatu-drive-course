@@ -10,6 +10,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:spot_id])
+    if @comment.destroy
+      redirect_to action: :spots/show
+    end
+  end
+
   private
   def spot_params
     params.require(:comment).permit(:score, :text).merge(user_id: current_user.id, spot_id: params[:spot_id])
