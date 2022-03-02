@@ -1,6 +1,6 @@
 class Spot < ApplicationRecord
   belongs_to :user
-  # has_many :comments, dependent: :destroy コメントモデル作ったらコメントアウト外す
+  has_many :comments, dependent: :destroy
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions

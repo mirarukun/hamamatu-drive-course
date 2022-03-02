@@ -41,21 +41,60 @@
   <div class = "border border-primary border-3 rounded m-3 p-3">
     <p class="display-7 "><%= @spot.name%>と一緒に行けそうなスポット（同じ方角のスポット）</p>
           <% @spots.each do |spot| %>
-            <% if spot.direction_id == @spot.direction_id %>
-              <% if spot.id != @spot.id %>
+            <% if spot.direction_id == @spot.direction_id && spot.id != @spot.id %>
                 ・ <%= spot.name %>
                 <%= link_to 'このスポットの詳細', spot_path(spot.id)%>
-              <%end%>
-            <%end%>
-          <%end%>
+            <% end %>
+          <% end %>
   </div>
 
-  <div class="d-flex justify-content-around">
+  <div class = "m-2"> 
+    <% if user_signed_in? %>
+      <% if current_user.id != @spot.user_id %>
+        <h3>このスポットに対するあなたの評価も書いてみよう！！</h3>
+        <%= form_with(model: [@spot, @comment], local: true) do |f| %>
+          <p>評価点（10点満点で記入）/ このスポットに行った感想や伝えたいことなどコメントしよう！！</p>
+          <div class = "d-flex flex-row ">
+            <div class = "m-1">
+            <%= f.text_area :score, placeholder:"(半角数字)", rows:"2" ,cols:"10"%>
+            </div>
+            <div class = "m-1">
+              <%= f.text_area :text, placeholder: "コメントする(100文字以内)", rows:"2" ,cols:"80" ,maxlength:"100" %>
+            </div>
+          </div>
+          <div class= "mt-1">
+          <%= f.submit "このスポットの評価を投稿", class: 'btn btn-primary btn-lg'%>
+          </div>
+        <% end %>
+      <% end %>
+    <% else %>
+        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+  </div>
+
+  <div class="mt-3">
+    <h4>＜評価 / コメント 一覧＞</h4>
+    <% if @comments.present? %>
+      <% @comments.each do |comment| %>
+        <p class ="border border-danger border-1 rounded m-1 p-1">
+          <strong><%= comment.user.nickname%>：</strong>
+          評価点<%= comment.score %>点　<%= comment.text %>
+        </p>
+        <%if user_signed_in? && comment.user_id == current_user.id%>
+          <%= link_to "このコメントを削除" ,spot_comment_path(comment.spot.id, comment.id), method: :delete, class:"btn btn-warning" %>
+        <% end %>
+      <% end %>
+    <% else%>
+      <p>このスポットに対するコメントはまだありません。</p>
+    <% end %>
+  </div>
+
+  <div class="d-flex justify-content-around mt-2">
     <%= link_to "トップページへ戻る", root_path, class: 'btn btn-info btn-lg' %>
     <% if user_signed_in? && current_user.id == @spot.user_id %>
       <div class>
-        <%= link_to "編集", edit_spot_path(@spot.id), class:"btn btn-warning btn-lg" %>
-        <%= link_to "削除", spot_path(@spot.id), method: :delete, class:"btn btn-danger btn-lg" %>
+        <%= link_to "このスポット情報を編集", edit_spot_path(@spot.id), class:"btn btn-warning btn-lg" %>
+        <%= link_to "このスポット情報を削除", spot_path(@spot.id), method: :delete, class:"btn btn-danger btn-lg" %>
       </div>
     <% end %>
   </div>
