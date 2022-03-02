@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to spot_path(@comment.spot)
     else
+      @spots = Spot.includes(:user)
       @spot = @comment.spot
       @comments = @spot.comments
       render "spots/show"
@@ -11,9 +12,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:spot_id])
+    @comment = Comment.find_by(id:params[:id], spot_id:params[:spot_id])
     if @comment.destroy
-      redirect_to action: :spots/show
+      redirect_to spot_path()
     end
   end
 

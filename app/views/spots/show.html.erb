@@ -80,6 +80,7 @@
           <strong><%= comment.user.nickname%>：</strong>
           評価点<%= comment.score %>点　<%= comment.text %>
         </p>
+        <%= link_to "削除" ,spot_comment_path(comment.spot.id, comment.id), method: :delete, class:"btn btn-warning" %>
       <% end %>
     <% else%>
       <p>このスポットに対するコメントはまだありません。</p>
