@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find_by(id:params[:id], spot_id:params[:spot_id])
     if @comment.destroy
-      redirect_to spot_path()
+      redirect_to spot_path(@comment.spot.id, @comment.id)
     end
   end
 
