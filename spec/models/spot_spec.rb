@@ -67,7 +67,7 @@ RSpec.describe Spot, type: :model do
         @spot.valid?
         expect(@spot.errors.full_messages).to include("Direction is invalid")
       end
-      it 'userが紐付いていなければ出品できない' do
+      it 'userが紐付いていなければスポット登録できない' do
         @spot.user = nil
         @spot.valid?
         expect(@spot.errors.full_messages).to include('User must exist')
