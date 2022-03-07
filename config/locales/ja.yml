@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      spot:
+        name: スポット名
+        score: 評価点
+        text: 説明文
+        genre_id: スポットのジャンル
+        time_required_id: スポットに到着するまでの所要時間
+        situation_id: どの時間帯に行くのがおすすめか
+        direction_id: どちらの方角にあるか
+      comment:
+        score: 評価点
+        text: コメント文
