@@ -2,6 +2,10 @@
     <div class="border border-primary rounded m-1" style="padding:5px;">
     <h1>ログイン</h1>
     </div><br>
+    <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <div class="mt-2">
         <%= f.label :email, "メールアドレス" %><br />
