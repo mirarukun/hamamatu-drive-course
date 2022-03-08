@@ -20,57 +20,57 @@ RSpec.describe Spot, type: :model do
       it 'スポット名が記入されていないと保存できない' do
         @spot.name = ''
         @spot.valid?
-        expect(@spot.errors.full_messages).to include("Name can't be blank")
+        expect(@spot.errors.full_messages).to include("スポット名を入力してください")
       end
       it 'スポットの点数が記入されていないと保存できない' do
         @spot.score = ''
         @spot.valid?
-        expect(@spot.errors.full_messages).to include("Score can't be blank")
+        expect(@spot.errors.full_messages).to include("評価点を入力してください", "評価点は一覧にありません", "評価点は不正な値です", "評価点は数値で入力してください")
       end
       it 'スポットの点数は、0より低いと保存できない' do
         @spot.score = '-1'
         @spot.valid?
-        expect(@spot.errors.full_messages).to include('Score is not included in the list')
+        expect(@spot.errors.full_messages).to include("評価点は一覧にありません", "評価点は不正な値です")
       end
       it 'スポットの点数は、10より高いと保存できない' do
         @spot.score = '11'
         @spot.valid?
-        expect(@spot.errors.full_messages).to include('Score is not included in the list')
+        expect(@spot.errors.full_messages).to include("評価点は一覧にありません")
       end
       it 'スポットの点数は半角数値でなければ保存できない' do
         @spot.score = '５'
         @spot.valid?
-        expect(@spot.errors.full_messages).to include('Score is not a number')
+        expect(@spot.errors.full_messages).to include("評価点は数値で入力してください")
       end
       it 'スポットの説明が記入されていないと保存できない' do
         @spot.text = ''
         @spot.valid?
-        expect(@spot.errors.full_messages).to include("Text can't be blank")
+        expect(@spot.errors.full_messages).to include("説明文を入力してください")
       end
       it 'スポットのジャンルが選択されていないと保存できない' do
         @spot.genre_id = '--'
         @spot.valid?
-        expect(@spot.errors.full_messages).to include("Genre is invalid")
+        expect(@spot.errors.full_messages).to include("スポットのジャンルを、一つ選択して下さい")
       end
       it 'スポットに到着するまでの所要時間が選択されていないと保存できない' do
         @spot.time_required_id = '--'
         @spot.valid?
-        expect(@spot.errors.full_messages).to include("Time required is invalid")
+        expect(@spot.errors.full_messages).to include("スポットに到着するまでの所要時間を、一つ選択して下さい")
       end
       it 'スポットのおすすめの時間帯が選択されていないと保存できない' do
         @spot.situation_id = '--'
         @spot.valid?
-        expect(@spot.errors.full_messages).to include("Situation is invalid")
+        expect(@spot.errors.full_messages).to include("どの時間帯に行くのがおすすめかを、一つ選択して下さい")
       end
       it 'スポットの方角が選択されていないと保存できない' do
         @spot.direction_id = '--'
         @spot.valid?
-        expect(@spot.errors.full_messages).to include("Direction is invalid")
+        expect(@spot.errors.full_messages).to include("どちらの方角にあるかを、一つ選択して下さい")
       end
       it 'userが紐付いていなければスポット登録できない' do
         @spot.user = nil
         @spot.valid?
-        expect(@spot.errors.full_messages).to include('User must exist')
+        expect(@spot.errors.full_messages).to include("Userを入力してください")
       end
     end
   end
