@@ -9,3 +9,15 @@
   list-style: circle;
   color: rgb(182, 48, 0);
 }
+
+.comment-error-alert{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5vh;
+}
+
+.login-flash-message{
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}

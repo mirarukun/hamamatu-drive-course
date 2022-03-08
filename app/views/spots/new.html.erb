@@ -41,7 +41,7 @@
     <%= f.collection_select(:time_required_id, TimeRequired.all, :id, :name, {include_blank: "--"}, {class:"select-box", id:"spots-time"}) %>
 
     <div class="spots-hash">
-      ⑦そのスポットは、朝、昼、夜のうちどの時間帯に行くのがおすすめですか？(入力必須)
+      ⑦そのスポットは、どの時間帯に行くのがおすすめですか？(入力必須)
     </div>
     <%= f.collection_select(:situation_id, Situation.all, :id, :name, {include_blank: "--"}, {class:"select-box", id:"spots-time"}) %>
 

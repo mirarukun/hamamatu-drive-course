@@ -53,6 +53,7 @@
       <% if current_user.id != @spot.user_id %>
         <h3>このスポットに対するあなたの評価も書いてみよう！！</h3>
         <%= form_with(model: [@spot, @comment], local: true) do |f| %>
+          <%= render 'shared/comment_error_messages', model: f.object %>
           <p>評価点（10点満点で記入）/ このスポットに行った感想や伝えたいことなどコメントしよう！！</p>
           <div class = "d-flex flex-row ">
             <div class = "m-1">
