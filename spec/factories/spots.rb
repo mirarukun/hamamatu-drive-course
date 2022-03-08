@@ -7,7 +7,7 @@ FactoryBot.define do
     time_required_id { TimeRequired.all.sample.id }
     situation_id { Situation.all.sample.id }
     direction_id { Direction.all.sample.id }
-    association :user 
+    association :user
 
     after(:build) do |spot|
       spot.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')

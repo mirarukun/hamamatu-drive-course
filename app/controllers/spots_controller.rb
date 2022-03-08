@@ -1,7 +1,7 @@
 class SpotsController < ApplicationController
-  before_action :authenticate_user!, only: [ :new, :edit, :destroy]
-  before_action :assign_to_spot_instance, only: [ :show, :edit, :update, :destroy]
-  before_action :move_to_root, only: [ :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :assign_to_spot_instance, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_root, only: [:edit, :destroy]
 
   def index
     @spots = Spot.includes(:user)
@@ -38,9 +38,7 @@ class SpotsController < ApplicationController
   end
 
   def destroy
-    if @spot.destroy
-      redirect_to action: :index
-    end
+    redirect_to action: :index if @spot.destroy
   end
 
   def search
@@ -60,8 +58,6 @@ class SpotsController < ApplicationController
   end
 
   def move_to_root
-    if @spot.user_id != current_user.id
-      redirect_to root_path
-    end
+    redirect_to root_path if @spot.user_id != current_user.id
   end
 end
