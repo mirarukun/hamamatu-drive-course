@@ -53,7 +53,10 @@ RSpec.describe 'スポット登録', type: :system do
   context 'スポット登録ができないとき'do
     it 'ログインしていないとスポット登録ページに遷移できない' do
       # トップページに遷移する
-      # 「スポットを登録する」のボタンがないことを確認する
+      basic_pass root_path
+      visit root_path
+      # 「スポットを投稿する」のボタンがないことを確認する
+      expect(page).to have_no_content('スポットを投稿する')
     end
   end
 end
