@@ -14,8 +14,8 @@ module SignInSupport
      # ログインページへ遷移する
      visit new_user_session_path
      # 正しいユーザー情報を入力する
-     fill_in 'メールアドレス', with: @user.email
-     fill_in 'パスワード（6文字以上）', with: @user.password
+     fill_in 'メールアドレス', with: user.email
+     fill_in 'パスワード（6文字以上）', with: user.password
      # ログインボタンを押す
      find('input[name="commit"]').click
      # スポット一覧ページへ遷移することを確認する
