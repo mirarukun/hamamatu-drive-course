@@ -14,14 +14,7 @@ RSpec.describe 'スポット登録', type: :system do
   context 'スポット登録ができるとき'do
     it 'ログインしたユーザーはスポット登録ができる' do
       # ログインする
-      basic_pass root_path
-      visit root_path
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @user.email
-      fill_in 'パスワード（6文字以上）', with: @user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in(@user)
       # 「スポットを投稿する」ボタンがあることを確認する
       expect(page).to have_content('スポットを投稿する')
       # スポット登録ページに移動する
