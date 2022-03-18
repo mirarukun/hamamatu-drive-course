@@ -36,7 +36,7 @@
     <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank: "--"}, {class:"select-box", id:"spot-genre"}) %>
 
     <div class="spots-hash">
-      ⑥浜松から向かって、スポットに到着するまでの所要時間を下記から選択して下さい。(入力必須)
+      ⑥浜松(浜松駅)から向かって、スポットに到着するまでの所要時間を下記から選択して下さい。(入力必須)
     </div>
     <%= f.collection_select(:time_required_id, TimeRequired.all, :id, :name, {include_blank: "--"}, {class:"select-box", id:"spot-time"}) %>
 
