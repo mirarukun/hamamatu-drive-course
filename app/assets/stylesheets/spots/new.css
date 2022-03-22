@@ -36,3 +36,8 @@
   padding: 15px 35%;
   text-decoration: none;
 }
+
+.user-link {
+  text-decoration: none;
+  color: #010101;
+}

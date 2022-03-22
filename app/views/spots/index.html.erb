@@ -5,8 +5,11 @@
 
 <% if user_signed_in? %>
   <p class="display-6"> 
-    <%= link_to "#{current_user.nickname}さん", user_path(current_user) %>
+    <%= link_to "#{current_user.nickname}さん", user_path(current_user), class: 'user-link' %>
     、今日を最高のドライブデーにしよう！！
+  </p> 
+  <p> 
+  (ニックネームをクリックするとマイページを確認できます。)
   </p> 
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: 'btn btn-info btn-lg' %>
   <%= link_to "スポットを投稿する", new_spot_path, class:"btn btn-danger btn-lg" %>
