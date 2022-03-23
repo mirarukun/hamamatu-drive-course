@@ -9,8 +9,13 @@
 
   <div  class="p-3">
     <% @user.spots.each do |spot| %>
-      <%= link_to spot.name, spot_path(spot.id) %>
-      ：<%= spot.score %>点<br>
+      <div class="border border-danger border-1 rounded m-1 p-1">
+        <%= link_to spot.name, spot_path(spot.id) %>
+        ：<%= spot.score %>点
+        、ジャンル：<%= spot.genre.name %>
+        、浜松駅から車で<%= spot.time_required.name %>
+        、方角：<%= spot.direction.name %><br>
+      </div>
     <% end %>
   </div>
 
