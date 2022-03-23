@@ -1,12 +1,15 @@
 <div class="m-2">
 <div class="border border-5 border-primary rounded m-1" style="padding:5px;">
-<p class="display-3 ">浜松のドライブスポット一覧</p>
+<p class="display-3 ">浜松周辺のドライブスポット一覧</p>
 </div><br>
 
 <% if user_signed_in? %>
   <p class="display-6"> 
-    <%= "#{current_user.nickname}さん、" %>
-    今日を最高のドライブデーにしよう！！
+    <%= link_to "#{current_user.nickname}さん", user_path(current_user), class: 'user-link' %>
+    、今日を最高のドライブデーにしよう！！
+  </p> 
+  <p> 
+  (ニックネームをクリックするとマイページを確認できます。)
   </p> 
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: 'btn btn-info btn-lg' %>
   <%= link_to "スポットを投稿する", new_spot_path, class:"btn btn-danger btn-lg" %>
@@ -24,7 +27,8 @@
 </div>
 
   <p class="display-7"> 
-   スポットの名前を押すと詳細を見ることができるよ🤗　　(点数は10点満点、あくまで投稿者の主観になります。)
+   ・スポットの名前をクリックすると詳細を見ることができるよ🤗　　(点数は10点満点、あくまで投稿者の主観になります。)<br>
+   ・スポットの投稿者をクリックするとその投稿者が今までどんなスポットを投稿してきたか確認できるよ🤩
   </p> 
 
 <div class = "spot-content">
@@ -34,7 +38,7 @@
         <p class="display-6">
           ○
           <%= link_to spot.name, spot_path(spot.id) %>
-          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%=link_to "#{spot.user.nickname}", user_path(spot.user.id), class: 'spot-user-link'%>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -44,7 +48,7 @@
         <p class="display-6">
           ○
           <%= link_to spot.name, spot_path(spot.id) %>
-          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%=link_to "#{spot.user.nickname}", user_path(spot.user.id), class: 'spot-user-link'%>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -54,7 +58,7 @@
         <p class="display-6">
           ○
           <%= link_to spot.name, spot_path(spot.id) %>
-          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%=link_to "#{spot.user.nickname}", user_path(spot.user.id), class: 'spot-user-link'%>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -64,7 +68,7 @@
         <p class="display-6">
           ○
           <%= link_to spot.name, spot_path(spot.id) %>
-          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%=link_to "#{spot.user.nickname}", user_path(spot.user.id), class: 'spot-user-link'%>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -74,7 +78,7 @@
         <p class="display-6">
           ○
           <%= link_to spot.name, spot_path(spot.id) %>
-          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%=link_to "#{spot.user.nickname}", user_path(spot.user.id), class: 'spot-user-link'%>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -84,7 +88,7 @@
         <p class="display-6">
           ○
           <%= link_to spot.name, spot_path(spot.id) %>
-          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%=link_to "#{spot.user.nickname}", user_path(spot.user.id), class: 'spot-user-link'%>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -94,7 +98,7 @@
         <p class="display-6">
           ○
           <%= link_to spot.name, spot_path(spot.id) %>
-          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%=link_to "#{spot.user.nickname}", user_path(spot.user.id), class: 'spot-user-link'%>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -104,7 +108,7 @@
         <p class="display-6">
           ○
           <%= link_to spot.name, spot_path(spot.id) %>
-          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%=link_to "#{spot.user.nickname}", user_path(spot.user.id), class: 'spot-user-link'%>)</small>
         </p> 
       <% end %>
     <% end %>
@@ -114,7 +118,7 @@
         <p class="display-6">
           ○
           <%= link_to spot.name, spot_path(spot.id) %>
-          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%= spot.user.nickname %>)</small>
+          ：<%= spot.score %>点 <small class="text-muted">(投稿者:<%=link_to "#{spot.user.nickname}", user_path(spot.user.id), class: 'spot-user-link'%>)</small>
         </p> 
       <% end %>
     <% end %>

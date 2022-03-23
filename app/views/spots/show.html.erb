@@ -37,7 +37,7 @@
       </tr>
       <tr>
         <th scope="row">投稿者</th>
-        <td><%= @spot.user.nickname%></td>
+        <td><%=link_to "#{@spot.user.nickname}（←#{@spot.user.nickname}の投稿したスポットを確認）", user_path(@spot.user.id), class: 'spot-show-user-link'%></td>
       </tr>
     </tbody>
   </table>

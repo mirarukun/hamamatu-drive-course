@@ -36,3 +36,18 @@
   padding: 15px 35%;
   text-decoration: none;
 }
+
+.user-link {
+  text-decoration: none;
+  color: #010101;
+}
+
+.spot-user-link{
+  text-decoration: none;
+  color: #808080;
+}
+
+.spot-show-user-link{
+  text-decoration: none;
+  color: #010101;
+}
