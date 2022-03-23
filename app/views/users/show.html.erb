@@ -7,6 +7,13 @@
   <%= @user.nickname%>さんが、今まで投稿してきたスポット　件
   </h2>
 
+  <div  class="p-3">
+    <% @user.spots.each do |spot| %>
+      <%= link_to spot.name, spot_path(spot.id) %>
+      ：<%= spot.score %>点<br>
+    <% end %>
+  </div>
+
   <div class = "border border-primary border-3 rounded m-2 p-3">
     <h3>
       管理者から<%= @user.nickname%>さんへ
