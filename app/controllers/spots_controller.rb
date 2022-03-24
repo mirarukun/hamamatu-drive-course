@@ -44,6 +44,7 @@ class SpotsController < ApplicationController
   def search
     @q = Spot.ransack(params[:q])
     @spots = @q.result
+    @spot_num = @spots.count
   end
 
   private
